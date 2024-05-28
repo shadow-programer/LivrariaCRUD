@@ -2,31 +2,30 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
-const Book = ({
+const contato = ({
   id,
-  bookname,
-  author,
-  price,
-  quantity,
-  date,
-  handleRemoveBook
+  nome,
+  telefone,
+  email,
+  datadenacimento,
+  handleRemovecontato
 }) => {
   const history = useHistory();
 
   return (
-    <Card style={{ width: '18rem' }} className="book">
+    <Card style={{ width: '18rem' }} className="contato">
       <Card.Body>
-        <Card.Title className="book-title">{bookname}</Card.Title>
+        <Card.Title className="book-title">{nome}</Card.Title>
         <div className="book-details">
-          <div>Author: {author}</div>
-          <div>Quantity: {quantity} </div>
-          <div>Price: {price} </div>
-          <div>Date: {new Date(date).toDateString()}</div>
+          <div>ser humano: {nome}</div>
+          <div>numero que era ngm liga: {email} </div>
+          <div>email: {telefone} </div>
+          <div>Data que ngm lembra: {new Date(datadenacimento).toDateString()}</div>
         </div>
         <Button variant="primary" onClick={() => history.push(`/edit/${id}`)}>
           Edit
         </Button>{' '}
-        <Button variant="danger" onClick={() => handleRemoveBook(id)}>
+        <Button variant="danger" onClick={() => handleRemovecontato(id)}>
           Delete
         </Button>
       </Card.Body>
